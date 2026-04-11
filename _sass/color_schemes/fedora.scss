@@ -1,0 +1,33 @@
+@import "./color_schemes/dark";
+
+// Fedora brand palette
+$fedora-blue: #3c6eb4;
+$fedora-dark-blue: #294172;
+$fedora-navy: #072c61;
+$fedora-light-blue: #5b9bd5;
+$fedora-magenta: #db3279;
+
+// Background - deep navy tones
+$body-background-color: #0f1b2d;
+$sidebar-color: #0a1628;
+$table-background-color: #142238;
+$search-background-color: #142238;
+$base-button-color: #142238;
+$feedback-color: #081220;
+
+// Text
+$body-heading-color: #e8edf3;
+$body-text-color: #c5cdd8;
+$search-result-preview-color: #c5cdd8;
+$nav-child-link-color: #8fa3be;
+
+// Accent colors - Fedora blue
+$link-color: $fedora-light-blue;
+$btn-primary-color: $fedora-blue;
+
+// Borders
+$border-color: #1e3351;
+
+// Code blocks
+$code-background-color: #091220;
+$code-linenumber-color: #8fa3be;
