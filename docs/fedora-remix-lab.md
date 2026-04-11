@@ -79,6 +79,58 @@ The lab creates two VMs on an isolated virtual network:
 └──────────────────────────────────────┘
 ```
 
-## Documentation
+## Documentation Build Process
 
-Additional documentation is available in the `Docs/` directory of the repository, including detailed setup instructions and the Quick Start Guide (`QUICKSTART.md`) for Fedora Remix Lab ISO users.
+The Fedora Remix Lab repository uses a GitHub Actions workflow to automatically generate PDF documentation from its Markdown source files. This is powered by the custom [gh-md2pdf-action](https://github.com/tmichett/gh-md2pdf-action), a GitHub Action that converts Markdown to PDF with support for Mermaid diagrams, GitHub-style rendering, and automatic PDF bookmarks.
+
+### How It Works
+
+```
+┌──────────────┐     ┌──────────────────┐     ┌──────────────┐
+│  Push to     │────►│  GitHub Actions  │────►│  Docs/*.pdf  │
+│  main branch │     │  workflow        │     │  committed   │
+└──────────────┘     └────────┬─────────┘     └──────────────┘
+                              │
+                     ┌────────▼─────────┐
+                     │ gh-md2pdf-action  │
+                     │                  │
+                     │ 1. Pull md2pdf   │
+                     │    container     │
+                     │ 2. Convert MD    │
+                     │    to HTML       │
+                     │ 3. Render with   │
+                     │    Chromium      │
+                     │ 4. Generate PDF  │
+                     │    bookmarks     │
+                     └──────────────────┘
+```
+
+1. **Trigger** -- The workflow runs on every push to `main` or via manual `workflow_dispatch`
+2. **Conversion** -- The `gh-md2pdf-action` processes each Markdown file (`README.md`, `QUICKSTART.md`) through a containerized pipeline:
+   - Markdown is rendered to HTML with GitHub-flavored styling
+   - Mermaid diagram blocks are rendered via Mermaid.js
+   - Headless Chromium generates the PDF
+   - PDF bookmarks are created from Markdown headings using Python
+3. **Artifacts** -- The generated PDFs are uploaded as downloadable build artifacts
+4. **Auto-commit** -- On pushes to `main`, the workflow commits the updated PDFs back to the `Docs/` directory with a `[skip ci]` tag to prevent a workflow loop
+
+### Workflow Configuration
+
+The workflow at `.github/workflows/main.yml` uses the action like this:
+
+```yaml
+- name: Convert Markdown to PDF
+  uses: tmichett/gh-md2pdf-action@main
+  with:
+    files: README.md,QUICKSTART.md
+    output_dir: Docs
+```
+
+### Source Files and Output
+
+| Source | Output |
+|:-------|:-------|
+| `README.md` | `Docs/README.pdf` |
+| `QUICKSTART.md` | `Docs/QUICKSTART.pdf` |
+
+The `gh-md2pdf-action` can also be configured via a YAML config file for more complex projects, and supports custom container images, working directories, and error handling options. See the [gh-md2pdf-action documentation](https://github.com/tmichett/gh-md2pdf-action) for full details.
