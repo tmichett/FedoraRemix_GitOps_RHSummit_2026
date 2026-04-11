@@ -1,7 +1,7 @@
 ---
 title: Log Viewer
 layout: default
-nav_order: 4
+nav_order: 7
 ---
 
 # Log Viewer

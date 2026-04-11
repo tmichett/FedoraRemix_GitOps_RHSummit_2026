@@ -1,7 +1,7 @@
 ---
 title: Fedora Remix Lab
 layout: default
-nav_order: 3
+nav_order: 6
 ---
 
 # Fedora Remix Lab
