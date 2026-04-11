@@ -1,0 +1,38 @@
+title: Fedora Remix - GitOps & Automation
+description: GitHub and COPR - Red Hat Summit 2026 Presentation Materials
+baseurl: /FedoraRemix_GitOps_RHSummit_2026
+url: https://tmichett.github.io
+
+remote_theme: just-the-docs/just-the-docs@v0.10.1
+
+color_scheme: dark
+
+permalink: pretty
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - vendor/
+
+aux_links:
+  "GitHub":
+    - "https://github.com/tmichett/FedoraRemix_GitOps_RHSummit_2026"
+
+aux_links_new_tab: true
+
+nav_sort: case_insensitive
+
+heading_anchors: true
+
+back_to_top: true
+back_to_top_text: "Back to top"
+
+footer_content: "Fedora Remix GitOps &mdash; Red Hat Summit 2026"
+
+ga_tracking: null
+
+kramdown:
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false

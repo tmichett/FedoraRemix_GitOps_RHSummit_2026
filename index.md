@@ -1,0 +1,64 @@
+---
+title: Home
+layout: default
+nav_order: 1
+---
+
+# Fedora Remix - GitOps & Automation
+{: .fs-9 }
+
+GitHub and COPR - Red Hat Summit 2026 Presentation Materials
+{: .fs-6 .fw-300 }
+
+---
+
+## Overview
+
+This project documents the Fedora Remix ecosystem, a collection of tools and automation for building, customizing, and distributing a custom Fedora Linux distribution. The workflow leverages GitHub Actions, COPR, containers, and Ansible to create a fully automated GitOps pipeline.
+
+## Projects
+
+| Project | Description |
+|:--------|:------------|
+| [Remix Builder]({% link docs/remix-builder.md %}) | Containerized build environment for creating Fedora Remix ISO images using Podman |
+| [Fedora Remix Lab]({% link docs/fedora-remix-lab.md %}) | KVM/libvirt scripts for creating a virtual lab environment with networked Fedora VMs |
+| [Log Viewer]({% link docs/log-viewer.md %}) | PyQt6 GUI application for viewing, searching, and analyzing log files with ANSI color support |
+| [Fedora Remix]({% link docs/fedora-remix.md %}) | The core Fedora Remix distribution with kickstarts, themes, and build configuration |
+| [Fedora Remix Customize]({% link docs/fedora-remix-customize.md %}) | Ansible playbooks for post-install customization of Fedora Remix systems |
+| [Fedora Remix Tools]({% link docs/fedora-remix-tools.md %}) | PyQt5 YAML-driven menu application replacing legacy YAD/Bash scripts |
+
+## Architecture
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                    GitOps Pipeline                       │
+├─────────────────────────────────────────────────────────┤
+│                                                          │
+│  Fedora Remix ──► Remix Builder ──► ISO Image            │
+│       │                                                  │
+│       ├── Kickstart configs                              │
+│       ├── Themes & branding                              │
+│       └── Package selections                             │
+│                                                          │
+│  Fedora Remix Lab ──► Test VMs                           │
+│       └── KVM/libvirt automation                         │
+│                                                          │
+│  Fedora Remix Customize ──► Post-install setup           │
+│       └── Ansible playbooks                              │
+│                                                          │
+│  Fedora Remix Tools ──► User utilities                   │
+│       └── RPM via COPR                                   │
+│                                                          │
+│  Log Viewer ──► Diagnostics                              │
+│       └── RPM via COPR + Flatpak                         │
+│                                                          │
+└─────────────────────────────────────────────────────────┘
+```
+
+## Workflow
+
+1. **Build** - The Remix Builder container automates ISO creation from kickstart configurations
+2. **Test** - Fedora Remix Lab provisions VMs for validation
+3. **Customize** - Ansible playbooks apply post-install configuration
+4. **Package** - Tools and Log Viewer are packaged as RPMs via COPR
+5. **Distribute** - ISOs, RPMs, and Flatpaks are published for end users
