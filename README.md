@@ -11,6 +11,7 @@ Documentation site for the Fedora Remix ecosystem, covering the tools and automa
 | Remix Builder | [RemixBuilder](https://github.com/tmichett/RemixBuilder) | Containerized build environment for Fedora Remix ISOs |
 | Fedora Remix Lab | [Fedora_Remix_Lab](https://github.com/tmichett/Fedora_Remix_Lab) | KVM/libvirt virtual lab automation |
 | Log Viewer | [log_viewer](https://github.com/tmichett/log_viewer) / [log_viewer_copr](https://github.com/tmichett/log_viewer_copr) | PyQt6 log analysis application |
+| gh-md2pdf-action | [gh-md2pdf-action](https://github.com/tmichett/gh-md2pdf-action) | GitHub Action for Markdown to PDF conversion |
 | Fedora Remix | [Fedora_Remix](https://github.com/tmichett/Fedora_Remix) | Core distribution kickstarts and configuration |
 | Fedora Remix Customize | [FedoraRemixCustomize](https://github.com/tmichett/FedoraRemixCustomize) | Post-install Ansible playbooks |
 | Fedora Remix Tools | [Fedora_Remix_Tools](https://github.com/tmichett/Fedora_Remix_Tools) | PyQt5 menu application and RPM packaging |

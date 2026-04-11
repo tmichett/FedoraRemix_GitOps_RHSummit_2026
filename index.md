@@ -23,6 +23,7 @@ This project documents the Fedora Remix ecosystem, a collection of tools and aut
 | [Remix Builder]({% link docs/remix-builder.md %}) | Containerized build environment for creating Fedora Remix ISO images using Podman |
 | [Fedora Remix Lab]({% link docs/fedora-remix-lab.md %}) | KVM/libvirt scripts for creating a virtual lab environment with networked Fedora VMs |
 | [Log Viewer]({% link docs/log-viewer.md %}) | PyQt6 GUI application for viewing, searching, and analyzing log files with ANSI color support |
+| [gh-md2pdf-action]({% link docs/gh-md2pdf-action.md %}) | GitHub Action to convert Markdown files to PDF with Mermaid diagrams and PDF bookmarks |
 | [Fedora Remix]({% link docs/fedora-remix.md %}) | The core Fedora Remix distribution with kickstarts, themes, and build configuration |
 | [Fedora Remix Customize]({% link docs/fedora-remix-customize.md %}) | Ansible playbooks for post-install customization of Fedora Remix systems |
 | [Fedora Remix Tools]({% link docs/fedora-remix-tools.md %}) | PyQt5 YAML-driven menu application replacing legacy YAD/Bash scripts |
@@ -51,6 +52,9 @@ This project documents the Fedora Remix ecosystem, a collection of tools and aut
 │                                                          │
 │  Log Viewer ──► Diagnostics                              │
 │       └── RPM via COPR + Flatpak                         │
+│                                                          │
+│  gh-md2pdf-action ──► PDF Documentation                  │
+│       └── Markdown to PDF via GitHub Actions              │
 │                                                          │
 └─────────────────────────────────────────────────────────┘
 ```
