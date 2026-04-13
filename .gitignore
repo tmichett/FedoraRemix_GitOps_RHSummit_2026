@@ -6,3 +6,7 @@ vendor/
 .bundle/
 Gemfile.lock
 .DS_Store
+
+# Quickstart guides fetched from Fedora_Remix repo at build time
+docs/Quickstart_Container.md
+docs/Quickstart_Physical.md
