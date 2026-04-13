@@ -15,11 +15,11 @@ GitHub and COPR - Red Hat Summit 2026 Presentation Materials
 
 ## Quickstart Guides
 
-Get started building your own custom Fedora Remix ISO:
+Get started building your own custom Fedora Remix ISO. The **Container Build is the recommended method** — it provides a consistent, reproducible environment across different systems without modifying your host.
 
 | Guide | Description |
 |:------|:------------|
-| [Container Build]({% link docs/Quickstart_Container.md %}) | Build a Fedora Remix ISO using the containerized build system (recommended for most users) |
+| [Container Build]({% link docs/Quickstart_Container.md %}) | **Recommended.** Build a Fedora Remix ISO using the containerized build system with Podman |
 | [Physical/VM Build]({% link docs/Quickstart_Physical.md %}) | Build a Fedora Remix ISO directly on a physical or virtual machine |
 
 ---
