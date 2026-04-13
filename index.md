@@ -2,6 +2,7 @@
 title: Home
 layout: default
 nav_order: 1
+has_children: true
 ---
 
 # Fedora Remix - GitOps & Automation
@@ -9,6 +10,17 @@ nav_order: 1
 
 GitHub and COPR - Red Hat Summit 2026 Presentation Materials
 {: .fs-6 .fw-300 }
+
+---
+
+## Quickstart Guides
+
+Get started building your own custom Fedora Remix ISO:
+
+| Guide | Description |
+|:------|:------------|
+| [Container Build]({% link docs/Quickstart_Container.md %}) | Build a Fedora Remix ISO using the containerized build system (recommended for most users) |
+| [Physical/VM Build]({% link docs/Quickstart_Physical.md %}) | Build a Fedora Remix ISO directly on a physical or virtual machine |
 
 ---
 

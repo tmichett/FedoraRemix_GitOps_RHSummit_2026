@@ -24,6 +24,26 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
 
+      - name: Fetch Quickstart Guides from Fedora_Remix
+        run: |
+          curl -sSL -o docs/Quickstart_Container.md \
+            https://raw.githubusercontent.com/tmichett/Fedora_Remix/main/Quickstart_Container.md
+          curl -sSL -o docs/Quickstart_Physical.md \
+            https://raw.githubusercontent.com/tmichett/Fedora_Remix/main/Quickstart_Physical.md
+
+          prepend_front_matter() {
+            local filepath="$1" title="$2" order="$3"
+            local tmp
+            tmp=$(mktemp)
+            printf -- '---\ntitle: "%s"\nlayout: default\nparent: Home\nnav_order: %s\n---\n\n' \
+              "$title" "$order" > "$tmp"
+            cat "$filepath" >> "$tmp"
+            mv "$tmp" "$filepath"
+          }
+
+          prepend_front_matter "docs/Quickstart_Container.md" "Quickstart: Container Build" "1"
+          prepend_front_matter "docs/Quickstart_Physical.md" "Quickstart: Physical/VM Build" "2"
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
