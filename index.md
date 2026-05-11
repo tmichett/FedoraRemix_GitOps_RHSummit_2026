@@ -13,6 +13,14 @@ GitHub and COPR - Red Hat Summit 2026 Presentation Materials
 
 ---
 
+## Red Hat Summit 2026 Presentation
+
+**[Download Presentation (PDF)](Presentation/Red%20Hat%20Summit%202026%20-%20Fedora%20and%20COPR.pdf)**
+
+This presentation was delivered at Red Hat Summit 2026 on May 11th at 3:40 PM. It covers the Fedora Remix ecosystem, demonstrating how GitHub Actions, COPR, and GitOps principles can be combined to create a fully automated pipeline for building, customizing, and distributing a custom Fedora Linux distribution. The presentation showcases practical examples of containerized builds, cross-platform packaging, and automated workflows that enable reproducible infrastructure as code.
+
+---
+
 ## Quickstart Guides
 
 Get started building your own custom Fedora Remix ISO. The **Container Build is the recommended method** — it provides a consistent, reproducible environment across different systems without modifying your host.
